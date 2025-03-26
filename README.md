@@ -1,56 +1,66 @@
-# VLN_environment
-A repository for fast setup of ​continuous &amp; discrete Vision-and-Language Navigation (VLN) environments.
+# VLN Environment  
+A repository for fast setup of ​**continuous & discrete** Vision-and-Language Navigation (VLN) environments.
 
-- Download the dataset and automatically extract it to the correct path
+---
 
-  For discrete environment, run
+## Quick Start  
 
-  `python download_mp.py -o data --type matterport_skybox_images undistorted_camera_parameters --scans scans.txt`
+### 1. Download Datasets  
+Automatically download and extract datasets to the correct path:  
 
-   For continuous environment, run
+- ​**Discrete Environment**:  
+  ```bash  
+  python download_mp.py -o data --type matterport_skybox_images undistorted_camera_parameters --scans scans.txt  
+  ```  
 
-   `python download_mp.py -o data --task_data habitat  --scans scans.txt`
-  
+- ​**Continuous Environment**:  
+  ```bash  
+  python download_mp.py -o data --task_data habitat --scans scans.txt  
+  ```  
 
-- Pull docker from my aliyun remote docker registry
+---
 
-  `docker pull crpi-7t2wiqt0bx1eq6eo.cn-shanghai.personal.cr.aliyuncs.com/vln/vln_mp3d_habiat_pytorch:v2`
-- Docker run to create your own container
-  
-  First set environment variables to your local paths in run.sh like this.
+### 2. Docker Setup  
+Pull the pre-built Docker image from Aliyun Registry:  
+```bash  
+docker pull crpi-7t2wiqt0bx1eq6eo.cn-shanghai.personal.cr.aliyuncs.com/vln/vln_mp3d_habitat_pytorch:v2  
+```  
 
-  `
-  #! /bin/bash `
+---
 
-  `
-  export MATTERPORT_DATA_DIR=/home/lyx/dataset/data/v1/scans `
+### 3. Run the Container  
+1. ​**Set Environment Variables**  
+   Edit `run.sh` to specify your local paths:  
+   ```bash  
+   #!/bin/bash  
+   export MATTERPORT_DATA_DIR="/home/lyx/dataset/data/v1/scans"  
+   export MATTERPORT_SIMULATOR_DIR="/home/lyx/Matterport3DSimulator"  
+   export PROJECT_DIR="/home/lyx/my_project"  
+   export HABITAT_DATA_DIR="/home/lyx/dataset/v1/tasks/mp3d"  
+   ```  
 
-  `
-  export MATTERPORT_SIMULATOR_DIR=/home/lyx/Matterport3DSimulator `
+2. ​**Start the Container**  
+   ```bash  
+   bash run.sh  
+   ```  
 
-  `
-  export PROJECT_DIR=/home/lyx/my_project `
+---
 
-  `
-  export HABITAT_DATA_DIR=/home/lyx/dataset/v1/tasks/mp3d `
-    
-  
-  Then run `bash run.sh`
+### 4. Environment-Specific Scripts  
+- ​**Discrete Action Space Only**:  
+  ```bash  
+  bash run_only_mp3d.sh  
+  ```  
 
-  ps:
+- ​**Continuous Action Space Only**:  
+  ```bash  
+  bash run_only_habitat.sh  
+  ```  
 
-  If you only use a ​discrete action space environment
+---
 
-  run  `bash run_only_mp3D.sh`
-
-  If you only use a ​continuous action space environment
-
-  run  `bash run_only_habitat.sh`
-
-  ---------------------------------------
-  Thanks to Matterport3D/Habitat-Lab for simulations, and PyTorch/Docker for tech support.
-
-  
-
-  
-
+## Acknowledgments  
+Thanks to:  
+- [Matterport3DSimulator](https://github.com/peteanderson80/Matterport3DSimulator) for 3D environment data.  
+- [Habitat-Lab](https://github.com/facebookresearch/habitat-lab) for simulation tools.  
+- [PyTorch](https://pytorch.org) and [Docker](https://www.docker.com) for technical infrastructure.  
