@@ -21,7 +21,7 @@ Automatically download and extract datasets to the correct path:
 ---
 
 ### 2. Docker Setup  
-Pull the pre-built Docker image from Aliyun Registry:  
+Pull the pre-built Docker image from shuishui's Aliyun Registry:  
 ```bash  
 docker pull crpi-7t2wiqt0bx1eq6eo.cn-shanghai.personal.cr.aliyuncs.com/vln/vln_mp3d_habitat_pytorch:v2  
 ```  
