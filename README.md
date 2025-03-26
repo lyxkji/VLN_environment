@@ -5,7 +5,7 @@ A repository for fast setup of ​continuous &amp; discrete Vision-and-Language 
 
   For discrete environment, run
 
-  'python download_mp.py -o data --type matterport_skybox_images undistorted_camera_parameters --scans scans.txt'
+  `python download_mp.py -o data --type matterport_skybox_images undistorted_camera_parameters --scans scans.txt`
 
    For continuous environment, run
 
