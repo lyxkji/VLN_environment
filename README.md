@@ -1,5 +1,6 @@
 # VLN Environment  
 A repository for fast setup of ​**continuous & discrete** Vision-and-Language Navigation (VLN) environments.
+ubuntu 22.04 & torch 2.0.0 & Matterport3DSimulator & habitat 
 
 ---
 
