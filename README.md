@@ -1,6 +1,9 @@
 # VLN_environment
 A repository for fast setup of ​continuous &amp; discrete Vision-and-Language Navigation (VLN) environments.
 
+- Prepare dataset
+  
+
 - Pull docker from my aliyun remote docker registry
 
   `docker pull crpi-7t2wiqt0bx1eq6eo.cn-shanghai.personal.cr.aliyuncs.com/vln/vln_mp3d_habiat_pytorch:v2`
