@@ -57,6 +57,7 @@ docker pull crpi-7t2wiqt0bx1eq6eo.cn-shanghai.personal.cr.aliyuncs.com/vln/vln_m
   bash run_only_habitat.sh  
   ```  
 
+<small>**If this repo saved you 3 hours of setup time, please give it a ⭐️ star—we’d love your support!** *(✧ω✧)*</small>
 ---
 
 ## Acknowledgments  
