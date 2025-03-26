@@ -1,7 +1,15 @@
 # VLN_environment
 A repository for fast setup of ​continuous &amp; discrete Vision-and-Language Navigation (VLN) environments.
 
-- Prepare dataset
+- Download the dataset and automatically extract it to the correct path
+
+  For discrete environment, run
+
+  'python download_mp.py -o data --type matterport_skybox_images undistorted_camera_parameters --scans scans.txt'
+
+   For continuous environment, run
+
+   `python download_mp.py -o data --task_data habitat  --scans scans.txt`
   
 
 - Pull docker from my aliyun remote docker registry
