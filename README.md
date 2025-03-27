@@ -1,12 +1,15 @@
 # VLN Environment  
 A repository for fast setup of ​**continuous & discrete** Vision-and-Language Navigation (VLN) environments.
-ubuntu 22.04 & torch 2.0.0 & Matterport3DSimulator & habitat 
+ubuntu 20.04 & cuda 11.8 & torch 2.0.0 & Matterport3DSimulator & habitat 
 
 ---
 
 ## Quick Start  
 
-### 1. Download Datasets  
+### 1.Prepare
+
+#### (1) Download Datasets  
+    
 Automatically download and extract datasets to the correct path:  
 
 - ​**Discrete Environment**:  
@@ -18,6 +21,8 @@ Automatically download and extract datasets to the correct path:
   ```bash  
   python download_mp.py -o data --task_data habitat --scans scans.txt  
   ```  
+#### (2) Download Matterport3Dsimulator_opencv4 folder from [Mercy2Green](https://github.com/Mercy2Green/MatterSim_BEVBert_Docker.git) (Discrete Environment)
+
 
 ---
 
@@ -58,6 +63,25 @@ docker pull crpi-7t2wiqt0bx1eq6eo.cn-shanghai.personal.cr.aliyuncs.com/vln/vln_m
   bash run_only_habitat.sh  
   ```  
 
+### 5. MatterSim build & test (Discrete Environment)
+
+- build
+  
+```
+cd /root/mount/Matterport3DSimulator
+mkdir build && cd build
+cmake -DEGL_RENDERING=ON ..
+make
+cd ../
+```
+- test
+  
+ ```
+./build/tests ~Timing
+```
+If all the test is passed, which means you will see only green without any red errors.
+
+
 <small>**If this repo saved you 3 hours of setup time, please give it a ⭐️ star—we’d love your support!** *(✧ω✧)*</small>
 ---
 
@@ -65,4 +89,5 @@ docker pull crpi-7t2wiqt0bx1eq6eo.cn-shanghai.personal.cr.aliyuncs.com/vln/vln_m
 Thanks to:  
 - [Matterport3DSimulator](https://github.com/peteanderson80/Matterport3DSimulator) for 3D environment data.  
 - [Habitat-Lab](https://github.com/facebookresearch/habitat-lab) for simulation tools.  
-- [PyTorch](https://pytorch.org) and [Docker](https://www.docker.com) for technical infrastructure.  
+- [PyTorch](https://pytorch.org) and [Docker](https://www.docker.com) for technical infrastructure.
+- [Mercy2Green](https://github.com/Mercy2Green/MatterSim_BEVBert_Docker.git) for the basic environment setup.
